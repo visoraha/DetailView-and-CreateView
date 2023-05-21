@@ -1,0 +1,22 @@
+{% extends 'app/dummy.html' %}
+
+{% block title %}
+<title>create a form and insert the data</title>
+{% endblock %}
+
+    
+{% block body_block %}
+<body style="background-color: rgb(68, 0, 255);">
+    <center>
+<h1>insert the data</h1>
+<form  method="POST">
+
+    {% csrf_token %}
+    <h4 style="color: yellow;">{{form.as_p}}</h4>
+
+
+    <h5><input type="submit" value="create"></h5>
+</form>
+</center>
+</body>
+{% endblock %}
