@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block body_block  %}
+<body style="background-color: aquamarine;">
+    <center>
 <h1 style="color: deeppink;">Details Of {{sclobj.name}} object</h1>
 
 <h1>Name of School is {{sclobj.name}}</h1>
@@ -19,4 +21,8 @@
     <h6>name of student is {{i.sname}}</h6>
     <h6>age of student is {{i.sage}}</h6>
 {% endfor %}
+<h2><a href="{% url 'schoolupdate' pk=sclobj.pk %}" class="btn btn-primary">update</a></h2>
+<h2><a href="{% url 'schooldelete' pk=sclobj.pk %}" class="btn btn-danger">delete</a></h2>
+</center>
+</body>
 {% endblock %}

@@ -8,14 +8,22 @@
 {% block body_block %}
 <body style="background-color: rgb(68, 0, 255);">
     <center>
-<h1>insert the data</h1>
+{% if form.instance.pk %}
+<h1>update the data</h1>
+{% else %}
+<h1>create  the data</h1>
+{% endif %}
 <form  method="POST">
 
     {% csrf_token %}
-    <h4 style="color: yellow;">{{form.as_p}}</h4>
+    <h4>{{form.as_p}}</h4>
 
-
+    {% if form.instance.pk %}
+    <h5><input type="submit" value="update"></h5>
+    {% else %}
     <h5><input type="submit" value="create"></h5>
+    {% endif %}
+
 </form>
 </center>
 </body>
